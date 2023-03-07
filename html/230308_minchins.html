@@ -1,0 +1,400 @@
+<style>
+    /* [다음카페 게시글 CSS로 조작하기]
+     * 
+     * 참고한 튜토리얼
+     *   - https://8ugust-dev.tistory.com/28 (by 8ugust, 2022.02.25)
+     * 
+     * 참고한 예시
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+     *   - https://cafe.daum.net/ingsfriend/pr4o/213718 (by 고잉돌 @잉친쓰, 2022.09.22)
+     *
+     * 남기고 싶은 말
+     *   - 잉친이들아 니네 코드 쩔더라
+     *   - 우정잉 만세!
+     */
+
+
+    /* PC 댓글란 조작
+     * 
+     * 참고한 예시
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+     *
+     * 조작 대상
+     *   - 댓글프사 content url 변경
+     *     - 댓글 순서 번호에 따라 내용 상이
+     *     - 단, 댓글쓴이의 닉네임이 우정잉인 경우 효과 제외
+     *   - 댓글쓴이 닉네임 content 변경
+     *     - 댓글 순서 번호에 따라 내용 상이
+     *     - 단, 댓글쓴이의 닉네임이 우정잉인 경우 효과 제외
+     *   - 댓글 내용 content 변경
+     *     - 댓글 내용 내 원댓글 댓글쓴이명은 안보이게 만들고 복원하지 않음
+     *     - 단, 댓글쓴이의 닉네임이 우정잉인 경우 효과 제외
+     */
+    
+    /* 원래 닉네임 안보이게 만들기 */
+    #content .list_comment li:not([data-nickname="우정잉"]) .opt_more_g .txt_name{
+      display: inline-block;
+      font-size: 0;
+    }
+    /* 원래 댓글내용 안보이게 만들기 */
+    #content .list_comment li:not([data-nickname="우정잉"]) .box_post .original_comment{
+      display: inline-block;
+      font-size: 0;
+    }
+    /* 답글 시 원댓글 댓글쓴이명 안보이게 만들기 */
+    #content .list_comment li:not([data-nickname="우정잉"]) .mention_nickname {
+      font-size:0;
+    }
+    
+    /* 댓글프사 변경 */
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+1) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/c547680e8e063dc8dc91555fadc3ad0befb502ef");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+2) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/1fa2a5785975034fce679e28bd208e7afdfed4bf");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+3) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/55c73f8d1ff46ab39ac8fb159e24186b199a4de9");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+4) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/ae35557fb059ede4293509fd79de98b7a85f0a5f");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+5) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/640980705b302fed9d2c22cd8261ac6f4d4a8582");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+6) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/13812154d0e76afd8758e5d5e8a13c68731b609a");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+7) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/b33e2323e2970ef6291fd656e817cf8aded63942");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+8) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/307077b704c93ddefd94f87c7e8edd79e60314d6");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+9) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/e3334cf55bb05b146077ce2eaf9dc55221660b60");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+10) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/51f28dd25bbe439435790e9e3c336f7c59d1a10f");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+11) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/2494373506274c87720c95ec0521f7107ab4a6d9");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+12) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/3356217486594bf588cca288854161ee4477be7d");
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n) .img_thumb{
+      content: url("https://t1.daumcdn.net/cafeattach/1YV3j/898ba0327995940ab9e0ad591d6a60e4a9802989");
+    }
+
+    /* :after를 이용하여 댓글쓴이명 추가 및 폰트 사이즈 복원 */
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+1) a:not(.mention_nickname).txt_name:after{
+      content:"우겅잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+2) a:not(.mention_nickname).txt_name:after{
+      content:"우넝잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+3) a:not(.mention_nickname).txt_name:after{
+      content:"우덩잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+4) a:not(.mention_nickname).txt_name:after{
+      content:"우렁잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+5) a:not(.mention_nickname).txt_name:after{
+      content:"우멍잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+6) a:not(.mention_nickname).txt_name:after{
+      content:"우벙잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+7) a:not(.mention_nickname).txt_name:after{
+      content:"우성잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+8) a:not(.mention_nickname).txt_name:after{
+      content:"우엉잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+9) a:not(.mention_nickname).txt_name:after{
+      content:"우청잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+10) a:not(.mention_nickname).txt_name:after{
+      content:"우컹잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+11) a:not(.mention_nickname).txt_name:after{
+      content:"우텅잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n+12) a:not(.mention_nickname).txt_name:after{
+      content:"우펑잉보단김민킈";
+      font-size: 13px;
+    }
+
+    #content .list_comment li:not([data-nickname="우정잉"]):nth-child(13n) a:not(.mention_nickname).txt_name:after{
+      content:"우헝잉보단김민킈";
+      font-size: 13px;
+    }
+
+    /* :after를 이용하여 댓글 내용 추가 및 폰트 사이즈 복원 */
+    #content .list_comment li:not([data-nickname="우정잉"]) .original_comment:after{
+      content:"김민킈 사랑해";
+      font-size: 13px;
+    }
+
+
+    /* 모바일 댓글란 조작
+     * 
+     * 참고한 예시
+     *   - https://cafe.daum.net/ingsfriend/pr4o/213718 (by 고잉돌 @잉친쓰, 2022.09.22)
+     *
+     * 조작 대상
+     *   - 댓글프사 content url 변경
+     *     - 댓글 순서 번호에 따라 내용 상이
+     *   - 댓글쓴이 닉네임 content 변경
+     *     - 댓글 순서 번호에 따라 내용 상이
+     *     - 해당 댓글이 대댓글인 경우와 아닌 경우를 모두 적용하기 위해 동일 코드 두번 적용
+     *   - 댓글 내용 content 변경
+     */
+    
+    /* 원래 닉네임 안보이게 만들기 */
+    #mArticle li span:first-child{
+      display: none;
+    }
+    /* 원래 댓글내용 안보이게 만들기 */
+    #mArticle li > :last-child p{
+      display: none;
+    }
+    
+    /* 댓글프사 변경 */
+    #mArticle li:nth-child(13n+1) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/c547680e8e063dc8dc91555fadc3ad0befb502ef'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+2) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/1fa2a5785975034fce679e28bd208e7afdfed4bf'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+3) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/55c73f8d1ff46ab39ac8fb159e24186b199a4de9'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+4) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/ae35557fb059ede4293509fd79de98b7a85f0a5f'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+5) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/640980705b302fed9d2c22cd8261ac6f4d4a8582'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+6) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/13812154d0e76afd8758e5d5e8a13c68731b609a'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+7) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/b33e2323e2970ef6291fd656e817cf8aded63942'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+8) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/307077b704c93ddefd94f87c7e8edd79e60314d6'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+9) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/e3334cf55bb05b146077ce2eaf9dc55221660b60'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+10) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/51f28dd25bbe439435790e9e3c336f7c59d1a10f'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+11) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/2494373506274c87720c95ec0521f7107ab4a6d9'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n+12) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/3356217486594bf588cca288854161ee4477be7d'); 
+      background-size: contain, cover; 
+    }
+
+    #mArticle li:nth-child(13n) :first-child a:before {
+      content:""; position: absolute; width:100%; height:100%; z-index:2;
+      background: url('https://t1.daumcdn.net/cafeattach/1YV3j/898ba0327995940ab9e0ad591d6a60e4a9802989'); 
+      background-size: contain, cover; 
+    }
+    
+
+    /* 삭제한 댓글쓴이명 최대한 똑같이 */
+    #mArticle li:nth-child(13n+1) :nth-child(2) :before{
+      content:"우겅잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+1) :nth-child(3) :before{
+      content:"우겅잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+2) :nth-child(2) :before{
+      content:"우넝잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+2) :nth-child(3) :before{
+      content:"우넝잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+3) :nth-child(2) :before{
+      content:"우덩잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+3) :nth-child(3) :before{
+      content:"우덩잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+4) :nth-child(2) :before{
+      content:"우렁잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+4) :nth-child(3) :before{
+      content:"우렁잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+5) :nth-child(2) :before{
+      content:"우멍잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+5) :nth-child(3) :before{
+      content:"우멍잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+6) :nth-child(2) :before{
+      content:"우벙잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+6) :nth-child(3) :before{
+      content:"우벙잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+7) :nth-child(2) :before{
+      content:"우성잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+7) :nth-child(3) :before{
+      content:"우성잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+8) :nth-child(2) :before{
+      content:"우엉잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+8) :nth-child(3) :before{
+      content:"우엉잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+9) :nth-child(2) :before{
+      content:"우청잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+9) :nth-child(3) :before{
+      content:"우청잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+10) :nth-child(2) :before{
+      content:"우컹잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+10) :nth-child(3) :before{
+      content:"우컹잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+11) :nth-child(2) :before{
+      content:"우텅잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+11) :nth-child(3) :before{
+      content:"우텅잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n+12) :nth-child(2) :before{
+      content:"우펑잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n+12) :nth-child(3) :before{
+      content:"우펑잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    #mArticle li:nth-child(13n) :nth-child(2) :before{
+      content:"우헝잉보단김민킈\a";
+      white-space: pre;
+    }
+    #mArticle li:nth-child(13n) :nth-child(3) :before{
+      content:"우헝잉보단김민킈\a";
+      white-space: pre;
+    }
+
+    /* :after를 이용하여 댓글 내용 추가 */
+    #mArticle li > :last-child:after{
+      content:"김민킈 사랑해";
+    }
+</style>
