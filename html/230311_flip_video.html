@@ -1,0 +1,59 @@
+<!-- 스크랩 원글 비디오 -->
+<iframe   title="なに を 反対? (왜 반대?)"  width="640" height="360"  src="https://play-tv.kakao.com/embed/player/cliplink/rvljofwt6fyqtitn7gpgnt2lt@my?service=player_share"  allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"  style="transform: scaleX(-1);">
+</iframe>
+
+<!-- 스크랩 원글 출처 -->
+<div class="content_info_etc pc_ingchins" style="text-align: left;">
+  <p>
+    <strong tabindex="0">출처:</strong>
+    <span tabindex="0">우정잉 팬까페 잉친쓰</span>
+    <a class="scrap_origin" target="_blank" href="https://cafe.daum.net/_c21_/bbs_read?grpid=1YV3j&fldid=pr5L&contentval=003Q5zzzzzzzzzzzzzzzzzzzzzzzzz">원문보기</a>
+    <strong tabindex="0" class="scrap_author">글쓴이:</strong>
+    <span tabindex="0">이환이</span>
+  </p>
+</div>
+<div class="wrap_scrap mobile_ingchins" style="text-align: left;">
+  <span class="txt_source" style="color: #888;">스크랩 원문 :</span>
+  <a href="https://m.cafe.daum.net/ingsfriend/pr5L/13149?svc=cafeapp" class="link_source" style="color: #888;">우정잉 팬까페 잉친쓰</a>
+</div>
+
+<!-- 스크랩 한 척 하기 -->
+<style>
+  /*** PC 제목 조작 ***/
+  
+  /* 제목 뒤집기 */
+  #content .bbs_read_tit .tit_info {
+    transform: scaleX(-1);
+    text-align: right;
+  }
+  /* 스크랩 문구 추가 */
+  #content .bbs_read_tit .tit_info:before {
+    content: "스크랩 ";
+    color: #959595;
+  }
+
+
+  /*** 모바일 제목 조작 ***/
+
+  /* 제목 뒤집기 */
+  #mArticle > div:first-child > :nth-last-child(2) {
+    transform: scaleX(-1);
+    text-align: right;
+  }
+  /* 스크랩 문구 추가 */
+  #mArticle > div:first-child > :nth-last-child(2):before {
+    content: "[스크랩] ";
+  }
+
+
+  /*** 스크랩 글 정보 ***/
+
+  /* 가짜 PC 스크랩 정보 모바일에서는 안보이게 */
+  #mArticle div.pc_ingchins {
+    display: none;
+  }
+  /* 가짜 모바일 스크랩 정보 PC에서는 안보이게 */
+  #content div.mobile_ingchins {
+    display: none;
+  }
+</style>
