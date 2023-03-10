@@ -1,0 +1,96 @@
+<!-- 스크랩 원글 비디오 및 사진 -->
+<iframe   title="ㅋㅋ 무친년" width="640" height="360" src="https://play-tv.kakao.com/embed/player/cliplink/rvj1g91xcpz3nakzsy7vv3mbb@my?service=player_share"   allowfullscreen frameborder="0" scrolling="no" allow="autoplay; fullscreen; encrypted-media"  style="animation: rotate 8s infinite linear;">
+</iframe>
+<p>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</p>
+<div   class="figure-img" data-ke-type="image" data-ke-style="alignCenter" data-ke-mobilestyle="widthOrigin">
+  <img src="https://t1.daumcdn.net/cafeattach/1YV3j/7407bb628ec5c8a63c8f393c04b3783130d0c5ad" class="txc-image" data-img-src="https://t1.daumcdn.net/cafeattach/1YV3j/7407bb628ec5c8a63c8f393c04b3783130d0c5ad" data-origin-width="2360" data-origin-height="1640" style="width: 1205px;">
+  <div class="figcaption">오늘의 가내수공업 먹고죽으라는우정잉</div>
+</div>
+<p>&nbsp;<br>&nbsp;</p>
+
+<!-- 스크랩 원글 출처 -->
+<div class="content_info_etc pc_ingchins" style="text-align: left;">
+  <p>
+    <strong tabindex="0">출처:</strong>
+    <span tabindex="0">우정잉 팬까페 잉친쓰</span>
+    <a class="scrap_origin" target="_blank" href="https://cafe.daum.net/_c21_/bbs_read?grpid=1YV3j&fldid=pr5L&contentval=000Zhzzzzzzzzzzzzzzzzzzzzzzzzz">원문보기</a>
+    <strong tabindex="0" class="scrap_author">글쓴이:</strong>
+    <span tabindex="0">엘리베이터안기다려주는우정잉</span>
+  </p>
+</div>
+<div class="wrap_scrap mobile_ingchins" style="text-align: left;">
+  <span class="txt_source" style="color: #888;">스크랩 원문 :</span>
+  <a href="https://m.cafe.daum.net/ingsfriend/pr5L/2213?svc=cafeapp" class="link_source" style="color: #888;">우정잉 팬까페 잉친쓰</a>
+</div>
+
+<!-- CSS 코드 -->
+<style>
+  /* 돌리는 애니메이션
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/sUaB/1903 (by 판교knowBe @잉친쓰, 2023.02.11)
+   *
+   * 남기고 싶은 말
+   *   - 잉친아 니 코드 쩔더라
+   *   - 우정잉 만세!
+   */
+  @keyframes rotate {
+    from {
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+    to {
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+
+  /* PC 작성자 정보 프로필사진 애니메이션 */
+  #content .bbs_read_tit .profile_thumb {
+    animation: rotate 4s infinite linear;
+  }
+  /* PC 댓글 프로필사진 애니메이션 */
+  #content .list_comment li .profile_thumb img {
+    animation: rotate 4s infinite linear;
+  }
+
+  /* 모바일 작성자 정보 프로필사진 애니메이션 */
+  #mArticle > div:first-child > :last-child > :first-child {
+    animation: rotate 4s infinite linear;
+  }
+  /* 모바일 댓글 프로필사진 애니메이션 */
+  #mArticle li :first-child a {
+    animation: rotate 4s infinite linear;
+  }
+
+
+  /*** PC 제목 조작 ***/
+  
+  /* PC 제목 스크랩 문구 추가 */
+  #content .bbs_read_tit .tit_info:before {
+    content: "스크랩 ";
+    color: #959595;
+  }
+
+
+  /*** 모바일 제목 조작 ***/
+
+  /* 모바일 제목 스크랩 문구 추가 */
+  #mArticle > div:first-child > :nth-last-child(2):before {
+    content: "[스크랩] ";
+  }
+
+
+  /*** 스크랩 글 정보 ***/
+
+  /* 가짜 PC 스크랩 정보 모바일에서는 안보이게 */
+  #mArticle div.pc_ingchins {
+    display: none;
+  }
+  /* 가짜 모바일 스크랩 정보 PC에서는 안보이게 */
+  #content div.mobile_ingchins {
+    display: none;
+  }
+</style>
