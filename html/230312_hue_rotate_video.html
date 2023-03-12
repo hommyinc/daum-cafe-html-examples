@@ -1,0 +1,88 @@
+<!-- 스크랩 원글 비디오 -->
+<iframe  src="https://www.youtube.com/embed/BaWjOKUTxQA"  title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen  class="youtube_ingchins">
+</iframe>
+<p>&nbsp;</p><p>&nbsp;</p>
+<p style="text-align: left;">뭔가 달라졌나요? 나는 잘 모름</p>
+<p>&nbsp;</p>
+
+<!-- 스크랩 원글 출처 -->
+<div class="content_info_etc pc_ingchins" style="text-align: left;">
+  <p>
+    <strong tabindex="0">출처:</strong>
+    <span tabindex="0">우정잉 팬까페 잉친쓰</span>
+    <a class="scrap_origin" target="_blank" href="https://cafe.daum.net/_c21_/bbs_read?grpid=1YV3j&fldid=pr5L&contentval=00177zzzzzzzzzzzzzzzzzzzzzzzzz">원문보기</a>
+    <strong tabindex="0" class="scrap_author">글쓴이:</strong>
+    <span tabindex="0">복수연</span>
+  </p>
+</div>
+<div class="wrap_scrap mobile_ingchins" style="text-align: left;">
+  <span class="txt_source" style="color: #888;">스크랩 원문 :</span>
+  <a href="https://m.cafe.daum.net/ingsfriend/pr5L/4285?svc=cafeapp" class="link_source" style="color: #888;">우정잉 팬까페 잉친쓰</a>
+</div>
+
+<!-- 스크랩 한 척 하기 및 기타 CSS 코드 -->
+<style>
+  /* PC 동영상 크기 및 색깔 조작 */
+  #content iframe.youtube_ingchins {
+    width: 868px; height: 488px;
+    /* 왜 안돼 이거
+      -webkit-filter: hue-rotate(-120deg);
+      -moz-filter: hue-rotate(-120deg);
+      -ms-filter: hue-rotate(-120deg);
+      -o-filter: hue-rotate(-120deg);
+      filter: hue-rotate(-120deg);
+    */
+  }
+  /* 모바일 동영상 크기 및 색깔 조작 */
+  #mArticle iframe.youtube_ingchins {
+    width: 100%; aspect-ratio: 1.78;
+    filter: hue-rotate(-120deg);
+  }
+
+  /* PC 작성자 정보 프로필사진 색깔 조작 */
+  #content .bbs_read_tit .profile_thumb {
+    filter: hue-rotate(-120deg);
+  }
+  /* PC 댓글 프로필사진 색깔 조작 */
+  #content .list_comment li .profile_thumb img {
+    filter: hue-rotate(-120deg);
+  }
+
+  /* 모바일 작성자 정보 프로필사진 색깔 조작 */
+  #mArticle > div:first-child > :last-child > :first-child {
+    filter: hue-rotate(-120deg);
+  }
+  /* 모바일 댓글 프로필사진 색깔 조작 */
+  #mArticle li :first-child a {
+    filter: hue-rotate(-120deg);
+  }
+
+
+  /*** PC 제목 조작 ***/
+  
+  /* PC 제목 스크랩 문구 추가 */
+  #content .bbs_read_tit .tit_info:before {
+    content: "스크랩 ";
+    color: #959595;
+  }
+
+
+  /*** 모바일 제목 조작 ***/
+
+  /* 모바일 제목 스크랩 문구 추가 */
+  #mArticle > div:first-child > :nth-last-child(2):before {
+    content: "[스크랩] ";
+  }
+
+
+  /*** 스크랩 글 정보 ***/
+
+  /* 가짜 PC 스크랩 정보 모바일에서는 안보이게 */
+  #mArticle div.pc_ingchins {
+    display: none;
+  }
+  /* 가짜 모바일 스크랩 정보 PC에서는 안보이게 */
+  #content div.mobile_ingchins {
+    display: none;
+  }
+</style>
