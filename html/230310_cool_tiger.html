@@ -1,0 +1,55 @@
+<style>
+    /* [다음카페 게시글 CSS로 조작하기]
+     * 
+     * 참고한 튜토리얼
+     *   - https://8ugust-dev.tistory.com/28 (by 8ugust, 2022.02.25)
+     * 
+     * 참고한 예시
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1903 (by 판교knowBe @잉친쓰, 2023.02.11)
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+     *
+     * 남기고 싶은 말
+     *   - 잉친이들아 니네 코드 쩔더라
+     *   - 우정잉 만세!
+     */
+    
+    /* PC 댓글란 회원등급 아이콘 조작
+     * 
+     * 참고한 예시
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1903 (by 판교knowBe @잉친쓰, 2023.02.11)
+     *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+     *
+     * 조작 대상
+     *   - 댓글 회원등급 아이콘 조작
+     */
+    
+    /* 죄수 멍멍이 → (변동 없음) */ /*
+    #content .list_comment li .ico_role[src*="w_level_22"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_22.gif);
+    } */
+    /* 잉린 멍멍이 → 코알라 */
+    #content .list_comment li .ico_role[src*="w_level_25"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_29.gif);
+    }
+    /* 잉친 원숭이 → 호랑이 */
+    #content .list_comment li .ico_role[src*="w_level_27"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_40.gif);
+    }
+    /* 우수 나무늘보 → 곰 */
+    #content .list_comment li .ico_role[src*="w_level_28"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_32.gif);
+    }
+    /* 특별 판다 → 멍멍이 */
+    #content .list_comment li .ico_role[src*="w_level_30"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_25.gif);
+    }
+    /* 관리자 곰 → 원숭이 */
+    #content .list_comment li .ico_role[src*="w_level_32"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_27.gif);
+    }
+    /* 우정잉 호랑이 → 토끼 */
+    #content .list_comment li .ico_role[src*="w_level_40"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_05.gif);
+    }
+  </style>
+  <p>우정잉은 토끼<img class="ico_role" src="https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_05.gif" style="width: 16px; display: inline;"> 같은거나 해</p>
