@@ -1,0 +1,121 @@
+<!--
+  사진 지나갑니다
+    (원본:
+      근데 차은우
+      https://cafe.daum.net/ok1221/9a8f/50649358
+    )
+-->
+
+<!-- 스크랩 원글 출처 -->
+<div class="content_info_etc pc_ingchins" style="text-align: left;">
+  <p>
+    <strong tabindex="0">출처:</strong>
+    <span tabindex="0">쭉빵카페</span>
+    <a class="scrap_origin" target="_blank" href="https://cafe.daum.net/_c21_/bbs_read?grpid=1YV3j&fldid=pr4n&contentval=00RwHzzzzzzzzzzzzzzzzzzzzzzzzz">원문보기</a>
+    <strong tabindex="0" class="scrap_author">글쓴이:</strong>
+    <span tabindex="0">익명회원 입니다</span>
+  </p>
+</div>
+<div class="wrap_scrap mobile_ingchins" style="text-align: left;">
+  <span class="txt_source" style="color: #888;">스크랩 원문 :</span>
+  <a href="https://m.cafe.daum.net/ingsfriend/pr4n/107401?svc=cafeapp" class="link_source" style="color: #888;">쭉빵카페</a>
+</div>
+
+<!-- 스크랩 한 척 하기 -->
+<style>
+  /*** 제목 조작 ***/
+  
+  /* PC 제목 스크랩 문구 추가 */
+  #content .bbs_read_tit .tit_info:before {
+    content: "스크랩 ";
+    color: #959595;
+  }
+  /* 모바일 제목 스크랩 문구 추가 */
+  #mArticle > div:first-child > :nth-last-child(2):before {
+    content: "[스크랩] ";
+  }
+
+  /*** 스크랩 글 정보 ***/
+
+  /* 가짜 PC 스크랩 정보 모바일에서는 안보이게 */
+  #mArticle div.pc_ingchins {
+    display: none;
+  }
+  /* 가짜 모바일 스크랩 정보 PC에서는 안보이게 */
+  #content div.mobile_ingchins {
+    display: none;
+  }
+</style>
+
+
+<!-- 사진 지나가기 효과 -->
+<style>
+  :root {
+    --ingchin-img1: url(https://t1.daumcdn.net/cafeattach/1YV3j/12c3988901cfa0bd846e4a3a8fbc43156e818ba4);
+    --ingchin-img2: url(https://t1.daumcdn.net/cafeattach/1YV3j/3bcebe9412d839db3a770b76b708cba6a5397c63);
+    --ingchin-img3: url(https://t1.daumcdn.net/cafeattach/1YV3j/f1174617ade3e4c85a63bfd72b7fdb457dcabb37);
+    --ingchin-img4: url(https://t1.daumcdn.net/cafeattach/1YV3j/e4aefb0b6ff9794adcc178130cf6f190af3c4f3c);
+  }
+
+  /* `nana_move`라는 이름의 애니메이션 설정 */
+  @keyframes nana_move_1_r2l {
+    0% {top:20%; left:100%;}
+    12.5% {top:20%; left:0%;}
+    25% {top:20%; left:-130%;}
+    100% {top:20%; left:-130%;}
+  }
+  @keyframes nana_move_2_l2r {
+    0% {top:20%; right:100%;}
+    25% {top:20%; right:100%;}
+    37.5% {top:20%; right:0%;}
+    50% {top:20%; right:-130%;}
+    100% {top:20%; right:-130%;}
+  }
+  @keyframes nana_move_3_r2l {
+    0% {top:20%; left:100%;}
+    50% {top:20%; left:100%;}
+    62.5% {top:20%; left:0%;}
+    75% {top:20%; left:-130%;}
+    100% {top:20%; left:-130%;}
+  }
+  @keyframes nana_move_4_l2r {
+    0% {top:20%; right:100%;}
+    75% {top:20%; right:100%;}
+    87.5% {top:20%; right:0%;}
+    100% {top:20%; right:-130%;}
+  }
+
+  /* 나나 사진 공통 속성 */
+  div > p[class*="nana_pic"] {
+    position: fixed;
+    z-index: 1000;
+    /* x-index: 1000; y-index: 1000; */ 
+    /* 위에 2개는 왜 넣었지? 저런 프로퍼티 없다는데...? */
+    width: 500px;
+    height: 500px;
+  }
+
+  /* 나나 사진 각각 애니메이션 개별 설정 */
+  div > .nana_pic_1 {
+    background: var(--ingchin-img1) no-repeat center / contain;
+    animation: nana_move_1_r2l 20s infinite linear;
+  }
+  div > .nana_pic_2 {
+    background: var(--ingchin-img2) no-repeat center / contain;
+    animation: nana_move_2_l2r 20s infinite linear;
+  }
+  div > .nana_pic_3 {
+    background: var(--ingchin-img3) no-repeat center / contain;
+    animation: nana_move_3_r2l 20s infinite linear;
+  }
+  div > .nana_pic_4 {
+    background: var(--ingchin-img4) no-repeat center / contain;
+    animation: nana_move_4_l2r 20s infinite linear;
+  }
+</style>
+
+<!-- 사진 지나가기 적용할 태그 -->
+<p class="nana_pic_1" tabindex="0"></p>
+<p class="nana_pic_2" tabindex="0"></p>
+<p class="nana_pic_3" tabindex="0"></p>
+<p class="nana_pic_4" tabindex="0"></p>
