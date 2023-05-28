@@ -18,18 +18,25 @@
                   ..::::::                            .::::::.
       Man, I stole your code                          It's not my code
 
-                           Version 0, November 2022
+                           Version 0.1.0, May 2023
  
 Copyright (c) 2023 Chon, Sung Hyu
 
 Everyone is permitted to copy and distribute, modify this work as long as the 
 original licenses of this work is maintained.
-Most of the contents of this work is under MIT, GPL, etc. so use this work at your 
-own risk.
-If copyright infringement occurs, the author will pretend that author do not know 
-anything and claim that it's not the author's fault.
+Most of the contents of this work are under MIT, GPL, or some other major public
+licenses. Use this work at your own risk.
+If copyright infringement occurs, the author will pretend that the author does
+not know anything, does not intend to defend you, and will claim that it's not
+the author's fault.
  
                     MOST OF IT IS NOT MY CODE PUBLIC LICENSE
         TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
- 0. You do what the original authors tell you that you can do.
+ 1. You do what the original authors tell you that you can do.
+
+ 2. If the original license or author is not mentioned in some parts of code,
+    those codes are probably written by the author. You can use those parts of
+    code however you would like to, but keep in mind that the author has very
+    little experience in programming. Do not blame the author when you use those
+    codes for some serious applications and something goes wrong.
