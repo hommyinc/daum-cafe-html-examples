@@ -1,0 +1,96 @@
+<style>
+  /* [다음카페 게시글 CSS로 조작하기]
+   * 
+   * 참고한 튜토리얼
+   *   - https://8ugust-dev.tistory.com/28 (by 8ugust, 2022.02.25)
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/sUaB/1903 (2023.02.11)
+   *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (2023.02.26)
+   *   - https://cafe.daum.net/ingsfriend/pr4o/213718 (2022.09.22)
+   *
+   * 남기고 싶은 말
+   *   - 잉친이들아 니네 코드 쩔더라
+   *   - 우정잉 만세!
+   */
+
+  /* PC 댓글란 및 글쓴이 정보 조작
+   *   - 닉네임이 "우정잉", "잉친쓰", "잉튜브", "잉꺽정"인 경우 제외
+   */
+  
+  /* 작성자 정보 프로필사진 안보이게 만들기 */
+  #content .bbs_read_tit .profile_thumb {
+    display: none;
+  }
+  /* 작성자 정보 닉네임 안보이게 만들기 */
+  #content .bbs_read_tit .cover_info a.link_item{
+    font-size: 0;
+  }
+  /* :after를 이용하여 작성자 닉네임 추가 및 폰트 사이즈 복원 */
+  #content .bbs_read_tit .cover_info a.link_item:after{
+    content:"익명";
+    font-size: 13px;
+  }
+  
+  /* 댓글 프사 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]):not([data-nickname="잉친쓰"]):not([data-nickname="잉튜브"]):not([data-nickname="잉꺽정"]) .profile_thumb {
+    display: none;
+  }
+  /* 댓글 회원등급 아이콘 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]):not([data-nickname="잉친쓰"]):not([data-nickname="잉튜브"]):not([data-nickname="잉꺽정"]) .ico_role {
+    display: none;
+  }
+  /* 댓글쓴이 닉네임 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]):not([data-nickname="잉친쓰"]):not([data-nickname="잉튜브"]):not([data-nickname="잉꺽정"]) .opt_more_g .txt_name{
+    display: inline-block;
+    font-size: 0;
+  }
+  /* :after를 이용하여 댓글쓴이 닉네임 추가 및 폰트 사이즈 복원 (대댓글에 태그된 닉네임은 대상 X) */
+  #content .list_comment li:not([data-nickname="우정잉"]):not([data-nickname="잉친쓰"]):not([data-nickname="잉튜브"]):not([data-nickname="잉꺽정"]) a:not(.mention_nickname).txt_name:after{
+    content:"익명";
+    font-size: 13px;
+  }
+  /* 대댓글에 태그된 닉네임 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]):not([data-nickname="잉친쓰"]):not([data-nickname="잉튜브"]):not([data-nickname="잉꺽정"]) .mention_nickname {
+    font-size: 0;
+  }
+
+
+  /* 모바일 댓글란 조작
+   * 
+   */
+
+  /* 작성자 정보 프로필사진 안보이게 만들기 */
+  #mArticle > div:first-child > :last-child > :first-child {
+    display: none;
+  }
+  /* 작성자 정보 닉네임 안보이게 만들기 */
+  #mArticle > div:first-child > :last-child > :nth-child(2) > :first-child {
+    display: none;
+  }
+  /* :before를 이용하여 작성자 닉네임 양식과 최대한 비슷하게 추가 */
+  #mArticle > div:first-child > :last-child > :nth-child(2) > :nth-child(2):before{
+    content:"익명\a";
+    white-space: pre;
+  }
+
+  /* 댓글 프사 안보이게 만들기 */
+  #mArticle li :first-child a {
+    display: none;
+  }
+  /* 댓글 텍스트 내용 여백 조절 (대댓글 여부에 따라 달리 적용) */
+  #mArticle li:not(.reply_on) div:last-child {
+    padding-left: 0;
+  }
+  #mArticle li.reply_on div:last-child {
+    padding-left: 7%;
+  }
+  /* 댓글쓴이 닉네임 안보이게 만들기 */
+  #mArticle li span:first-child{
+    display: none;
+  }
+  /* 대댓글에 태그된 닉네임 안보이게 만들기 */
+  #mArticle li.reply_on div:last-child .emph_info{
+    display: none;
+  }
+</style>

@@ -1,0 +1,264 @@
+<style>
+    /* [잉친쓰 버블]
+     *
+     * 남기고 싶은 말
+     *   - https://cafe.daum.net/ingsfriend/prrY/4434
+     *   - https://cafe.daum.net/ingsfriend/prrY/4643
+     *   - 우정잉 만세!
+     */
+    
+    
+    /***** 0. 공통 *****/
+    
+    /* PC 댓글 섹션 배경 투명하게 */
+    #content div.cont_comment { background-color: transparent; }
+    #content div.cont_comment li { background-color: transparent !important; }
+    /* PC 게시글 부분 배경 투명하게 */
+    #primaryContent.primary_content {
+      background-color: transparent;
+    }
+    /* PC 댓글 섹션 배경 투명하게 */
+    #mArticle li {
+      background-color: transparent;
+    }
+    /* 모바일 배경 투명하게 */
+    #mArticle > * {
+      background-color: transparent;
+    }
+    /* PC 및 모바일 배경 배경색 설정 */
+    body#cafeSubLayout, body.landscape, #mArticle {
+      background-color: #B2C7DA; /* 버블 바탕색 */
+    }
+  
+    :root {
+      --ingchin-background: url(https://t1.daumcdn.net/cafeattach/1YV3j/728cb769a496f6da47fa98d3b5b7cded56f40de9); /* 카페 배너 */
+      --ingchin-bubble-logo: url(https://t1.daumcdn.net/cafeattach/1YV3j/49554d34fc1745dfa7edc7d2121e6ab769d5d420); /* 버블 로고 */
+      --ingchin-bubble-heart: url(https://t1.daumcdn.net/cafeattach/1YV3j/beb05bd64e910be6b33ce165057cb2623c36d06d); /* 버블 하트 */
+      --ingchin-image-rank1: url(https://t1.daumcdn.net/cafeattach/1YV3j/40cdd32d6c5266564109ffdfd022176b89add6a6); /* ING */
+      --ingchin-image-rank2: url(https://t1.daumcdn.net/cafeattach/1YV3j/b2bf4c9fb9c06e077593a4a9d1d61ea5f9ea433c); /* MANAGER */
+      --ingchin-image-rank3: url(https://t1.daumcdn.net/cafeattach/1YV3j/fb4cc102080cbc3d945a8277e4a731a76a5c3d04); /* INGCHIN */
+    }
+    
+    
+    /***** 1. PC *****/
+    
+    /*** 1-1. PC 재정렬 ***/
+    
+    /* 카페 배너 및 카페 프사 교체 */
+    #TITLEBACKGROUND {
+      background: var(--ingchin-background) no-repeat center;
+      background-size: cover;
+    }
+    /* PC 카페 좌측 메뉴 안보이게 */
+    #cafemenu {
+      display: none;
+    }
+    /* PC 게시글 좌측 여백 안보이게 */
+    #content {
+      margin-left: 0 !important;
+    }
+    
+    /* PC 작성자 정보 안보이게 */
+    #content .bbs_read_tit .info_desc { display: none; }
+    
+    /* PC 게시글 내용 안보이게 */
+    #content div#user_contents {
+      display: none;
+    }
+    
+    /* PC 댓글 하단 카카오 광고 안보이게 */
+    #content ins.kakao_ad_area {
+      display: none !important;
+    }
+    
+    /* PC 화면 최하단 글목록 안보이게 */
+    #content div.cont_boardlist, #content div.article_more_board {
+      display: none !important;
+    }
+    
+    /* PC 작성자, 첫댓글 태그 안보이게 */
+    #content span.tag_comment, #content span.first_comment {
+      display: none !important;
+    }
+    
+    /* PC 대댓글에 태그된 닉네임 안보이게 */
+    #content a.mention_nickname, #mArticle span.emph_info {
+      display: none;
+    }
+    
+    /*** 1-2. PC 제목 수정 ***/
+    
+    #content .bbs_read_tit .tit_info:before {
+      content: var(--ingchin-bubble-logo);
+      display: inline-block;
+      height: 20px; width: 72px;
+      margin-right: 5px;
+      transform: translateY(2px);
+    }
+    #content .bbs_read_tit .tit_info { text-align: center; }
+    #content .bbs_read_tit .tit_info:after {
+      content: var(--ingchin-bubble-heart);
+      display: inline-block;
+      height: 24px; width: 28px;
+      margin-left: 5px;
+      transform: translateY(4px);
+    }
+    
+    /*** 1-3. PC 댓글쓴이명 앞에 아이콘 ***/
+    
+    /* 죄수 멍멍이 → (변동 없음) */ /*
+    #content .list_comment li .ico_role[src*="w_level_22"] {
+      content: url(https://t1.daumcdn.net/cafe_image/cf_img2/bbs2/roleicon/2/w_level_22.gif);
+    } */
+    /* 잉린 멍멍이 → 잉친이 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_25"] {
+      content: var(--ingchin-image-rank3);
+      height: 16px; width: auto;
+    }
+    /* 잉친 원숭이 → 잉친이 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_27"] {
+      content: var(--ingchin-image-rank3);
+      height: 16px; width: auto;
+    }
+    /* 우수 나무늘보 → 잉친이 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_28"] {
+      content: var(--ingchin-image-rank3);
+      height: 16px; width: auto;
+    }
+    /* 특별 판다 → 잉친이 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_30"] {
+      content: var(--ingchin-image-rank3);
+      height: 16px; width: auto;
+    }
+    /* 관리자 곰 → 매니저 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_32"] {
+      content: var(--ingchin-image-rank2);
+      height: 16px; width: auto;
+    }
+    /* 우정잉 호랑이 → 잉 아이콘 */
+    #content .list_comment li .ico_role[src*="w_level_40"] {
+      content: var(--ingchin-image-rank1);
+      height: 16px; width: auto;
+    }
+    
+    /*** 1-4. PC 댓글 프사 밑에 동그라미 ***/
+    
+    /* 주황 동글뱅이 */
+    #content .list_comment li .profile_thumb:after {
+      /* PC 기본 프사 크기 : 36px x 36px */
+      height: 38px; width: 38px;
+      
+      /* 위치 */
+      position: absolute;
+      top: -2px; left: -2px;
+      z-index: -1;
+      
+      /* border radius 세팅을 통해 원으로 설정 */
+      border-radius: 50%;
+      
+      /* 색깔 */
+      background: linear-gradient(-45deg, #F8BD86, #FE6D08);
+    }
+    
+    /*** 1-5. PC 댓글 밑에 말풍선 ***/
+    
+    #content .list_comment li p.desc_info {
+      /* 말풍선 공간 확보 */
+      padding: 10px;
+      
+      /* 색깔 */
+      background: white;
+      
+      /* 말풍선 모양 */
+      border-top-left-radius: 3px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  
+  
+    /***** 2. 모바일 *****/
+    
+    /*** 2-1. 모바일 재정렬 ***/
+    
+    /* 모바일 광고 섹션 안보이게 */
+    #mArticle .banner_wrapper, #mArticle .kakao_ad_area {
+      display: none !important;
+    }
+    
+    /* 모바일 작성자 정보 안보이게 */
+    
+    #mArticle > div:first-child > :last-child { display: none; }
+    
+    /* 모바일 게시글 내용 안보이게 */
+    #mArticle > div:nth-child(2) {
+      display: none;
+    }
+    
+    /* 모바일 이전 및 다음글 링크 안보이게 */
+    #mArticle > div:last-child {
+      display: none;
+    }
+    
+    /* 모바일 대댓글에 태그된 닉네임 안보이게 */
+    #mArticle li.reply_on div:last-child .emph_info {
+      display: none;
+    }
+    
+    /*** 2-2. 모바일 제목 수정 ***/
+    
+    #mArticle > div:first-child > :nth-last-child(2):before {
+      content: var(--ingchin-bubble-logo);
+      display: inline-block;
+      height: 20px; width: 72px;
+      margin-right: 5px;
+      transform: translateY(2px);
+    }
+    #mArticle > div:first-child > :nth-last-child(2) { text-align: center; color: black; }
+    #mArticle > div:first-child > :nth-last-child(2):after {
+      content: var(--ingchin-bubble-heart);
+      display: inline-block;
+      height: 24px; width: 28px;
+      margin-left: 5px;
+      transform: translateY(4px);
+    }
+    
+    /*** 2-3. 모바일 댓글쓴이명 앞에 아이콘 ***/
+    
+    /* 모바일 댓글쓴이명 앞에 잉친이 아이콘 */
+    #mArticle li :nth-child(2) :first-child:before {
+      content: var(--ingchin-image-rank3);
+      display: inline-block;
+      height: 16px; width: 64px;
+      margin-right: 8px;
+    }
+    /* 모바일 대댓글쓴이명 앞에 잉친이 아이콘 */
+    #mArticle li :nth-child(3) :first-child:before {
+      content: var(--ingchin-image-rank3);
+      display: inline-block;
+      height: 16px; width: 64px;
+      margin-right: 8px;
+    }
+    
+    /*** 2-4. 모바일 댓글 프사 밑에 동그라미 ***/
+    
+    /* 주황 동글뱅이 포기 */
+    
+    /*** 2-5. PC 댓글 밑에 말풍선 ***/
+    
+    #mArticle li p {
+      /* 말풍선 공간 확보 */
+      padding: 10px;
+      margin: 5px 0 5px; /* [top] [left-and-right] [bottom] */
+      
+      /* 색깔 */
+      color: black;
+      background: white;
+      
+      /* 말풍선 모양 */
+      border-top-left-radius: 3px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+  </style>

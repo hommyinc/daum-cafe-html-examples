@@ -1,0 +1,79 @@
+<style>
+  /* [다음카페 게시글 CSS로 조작하기]
+   * 
+   * 참고한 튜토리얼
+   *   - https://8ugust-dev.tistory.com/28 (by 8ugust, 2022.02.25)
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+   *   - https://cafe.daum.net/ingsfriend/pr4o/213718 (by 고잉돌 @잉친쓰, 2022.09.22)
+   *
+   * 남기고 싶은 말
+   *   - 잉친이들아 니네 코드 쩔더라
+   *   - 우정잉 만세!
+   */
+
+
+  /* PC 댓글란 조작
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/sUaB/1991 (by 우정나라 개발자 @잉친쓰, 2023.02.26)
+   *
+   * 조작 대상
+   *   - 댓글 내용 content 변경
+   *     - 단, 댓글쓴이의 닉네임이 "우정잉"인 경우 효과 제외
+   */
+  
+  /* 원래 댓글내용 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]) .box_post .original_comment{
+    display: inline-block;
+    font-size: 0;
+  }
+  /* 원래 댓글에 이모티콘 포함 시 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]) .box_post div.kakao_emoticon{
+    display: none;
+  }
+  /* 원래 댓글에 사진 포함 시 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]) .box_post a.attach_image_thumbnail{
+    display: none;
+  }
+  /* 답글 시 원댓글 댓글쓴이명 안보이게 만들기 */
+  #content .list_comment li:not([data-nickname="우정잉"]) .mention_nickname {
+    font-size:0;
+  }
+
+  /* :after를 이용하여 댓글 내용에 이미지(70x70) 추가 */
+  #content .list_comment li:not([data-nickname="우정잉"]) .original_comment:after{
+  content:"";
+  background-image: url("https://t1.daumcdn.net/cafeattach/1YV3j/644cf33578fe7b1ae938c99491d0c3c5e3f1bfbb");
+  background-size:90px 90px;
+  width:90px;
+  height:90px;
+  display:inline-block;
+  }
+
+
+  /* 모바일 댓글란 조작
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/pr4o/213718 (by 고잉돌 @잉친쓰, 2022.09.22)
+   *
+   * 조작 대상
+   *   - 댓글 내용 content 변경
+   */
+  
+  /* 원래 댓글내용 안보이게 만들기 */
+  #mArticle li > :last-child p{
+    display: none;
+  }
+
+  /* :after를 이용하여 댓글 내용에 이미지(90x90) 추가 */
+  #mArticle li > :last-child:after{
+  content:"";
+  background-image: url("https://t1.daumcdn.net/cafeattach/1YV3j/644cf33578fe7b1ae938c99491d0c3c5e3f1bfbb");
+  background-size:70px 70px;
+  width:70px;
+  height:70px;
+  display:inline-block;
+  }
+</style>

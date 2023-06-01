@@ -1,0 +1,181 @@
+<!-- 카카오 광고 따라하기 -->
+<div class="ingchin_ad_area" style="display: block; vertical-align: top; position: relative; text-decoration: none; min-height: 206px; max-height: 330px;"> <!-- overflow: hidden; -->
+  <div class="ingchin_ad">
+    <a href="https://www.youtube.com/watch?v=e4axD_915Zw" class="link_ad" rel="noopener" target="_blank">
+      <span class="thumb_img"> 
+        <img src="https://t1.daumcdn.net/cafeattach/1YV3j/2a0db6a27efa90be82db518c2f70da76feb53228" class="img_thumb">
+      </span> 
+      <span class="frame_ad"></span> 
+      <span class="frame_g"></span> 
+      <span class="area_ad"> 
+        <button type="button" class="btn_ad">
+          알아보기
+        </button>
+        <strong class="tit_ad">잉드로이드 상호작용 피실험자 모집</strong> 
+      </span> 
+    </a>
+    <a href="https://www.youtube.com/watch?v=e4axD_915Zw" class="icon_ad" rel="noopener" target="_blank">
+      <span class="img_mark">광고 정보</span>
+    </a>
+  </div>
+</div>
+
+<style>
+  /* [다음카페 광고 따라하기]
+   *
+   * 남기고 싶은 말
+   *   - 크롬 브라우저로 `m.`이 붙은 잉친쓰 게시글 URL에 (https://m.cafe.daum.net/ingsfriend/어쩌구/저쩌구)
+   *     접속한 다음, 오른쪽 마우스를 눌러서 페이지를 .html로 저장하세요. 그러면 html 파일 하나랑 모든 웹 리소스가 담긴
+   *     폴더가 하나 생길겁니다. 그걸 열심히 뜯어보면 카카오 광고를 입맛에 맞게 튜닝할 수 있을거에요!
+   *   - iframe 태그는 유튜브, 트위치 같은 큰 웹사이트 출처의 src가 아니면 다 막히니 저처럼 시간낭비 ㄴㄴ
+   *
+   *   - https://cafe.daum.net/ingsfriend/prrY/4434 <- 여기에 잉친이들의 우수작품들 좀 정리해놨으니 참고하세요    *   - 잉친이들아 니네 코드 쩔더라    *    *   - 우정잉 만세!    */     /* PC/모바일 내용 다르게    *    * #content (PC)    *   > .ingchin_ad_area (위에 작성된 잉친광고)    *       * #mArticle (모바일)    *   > .banner_wrapper (광고 배너 껍데기; 안없애면 공간 차지함)    *   > .kakao_ad_area (원래 모바일 광고)
+   *
+   * {NOTE}
+   *   - none 뒤에 !important 안적어놓으면 뒤에 작성될 CSS 코드에 의해 display 값 덮어 씌워짐
+   */
+  #content .ingchin_ad_area {
+    display: none !important;
+  }    
+  #mArticle .banner_wrapper, #mArticle .kakao_ad_area {
+    display: none !important;
+  }
+
+
+  /* 실제 카카오 모바일 광고배너 iframe stylesheet 커스텀화
+   *
+   * {NOTE}
+   *   - 대형 사진 배너형 템플릿
+   */
+
+  /* style */
+  /*2021-04-22 수정 시작*/
+  .img_thumb {
+    display: block;
+    margin: 0 auto;
+    vertical-align: top;
+  }
+  .ingchin_ad {
+    position: relative;
+    min-width: 300px;
+    width: 100%; height: 0;
+    padding-top: 50%;
+    letter-spacing: 0;
+  }
+  .ingchin_ad .link_ad {
+    display: block;
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    height: 100%;
+    max-height: 284px;
+    padding-bottom: 46px;
+  }
+  .ingchin_ad .thumb_img {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    max-height: 284px;
+    min-height: 160px;
+    margin: 0 auto;
+  }
+  .ingchin_ad .thumb_img .img_thumb {
+    height: 100%;
+  }
+  .ingchin_ad .frame_ad {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 46px;
+    /* background: rgba(0,0,0,.02); */
+  }
+  .ingchin_ad .frame_g {
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 46px;
+    border-top: 1px solid; /* rgba(0,0,0,0.05) */
+    border-bottom: 1px solid; /* rgba(0,0,0,0.05) */
+  }
+  .ingchin_ad .area_ad {
+    /* overflow: hidden; */
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    height: 46px;
+    padding: 9px 15px;
+    z-index: 1;
+    box-sizing: border-box;
+    /* background-color: white; */
+  }
+  .ingchin_ad .tit_ad {
+    display: block;
+    /* overflow: hidden; */
+    padding: 1px 20px 0 0;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* color: #101010; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+  .ingchin_ad .btn_ad {
+    float: right;
+    height: 28px;
+    padding: 0 10px 0 9px;
+    border: 1px solid; /* rgba(0,0,0,0.12) */
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 27px;
+    /* color: #000; */
+    text-align: center;
+    letter-spacing: -1px;
+    box-sizing: border-box;
+  }
+
+  .area_info .tit_ad {margin-top:4px}
+  .area_info .desc_ad {padding-top:4px}
+  .area_info.area_rows .url_ad {margin-top:0}
+
+  /*admark*/
+  .ingchin_ad .icon_ad {
+    overflow: hidden;
+    position: absolute;
+    right: 0; top: 0;
+    width: 41px; height: 32px;
+    font-size: 0;
+  }
+  .ingchin_ad .icon_ad .img_mark {
+    display: block;
+    width: 25px;
+    height: 16px;
+    margin: 8px;
+    background: url(https://t1.daumcdn.net/biz/ui/ad/ico_adlogo2.png) no-repeat 0 0;
+    background-size: 25px 16px;
+  }
+
+  /*android 분기*/
+  .os_android .ingchin_ad .tit_ad,
+  .os_windows .ingchin_ad .tit_ad {letter-spacing:-0.5px}
+  .os_android .ingchin_ad .btn_ad,
+  .os_windows .ingchin_ad .btn_ad {line-height:28px;letter-spacing:-0.5px}
+
+  /* 다크모드(공통) */
+  @media (prefers-color-scheme:dark) {
+    /*
+    .ingchin_ad.themed .area_ad {background:#121212}
+    .ingchin_ad.themed .tit_ad {color:#b8b8b8}
+    */
+    .ingchin_ad.themed .btn_ad {
+      /* border-color: rgba(255,255,255,.18); */
+      opacity: 0.18;
+      /* color: #BCBCBC; */
+    }
+  }
+  
+  /* 2021-08-02 추가 */
+  /* 큰글씨모드(개별) */
+  .fs_big .tit_ad {padding-top:1px;font-size:19px}
+
+</style>
