@@ -1,0 +1,120 @@
+<style>
+  /* [잉친쓰 당근마켓]
+   * 
+   * 참고한 예시
+   *   - https://cafe.daum.net/ingsfriend/pr4o/276509 (by 이친희 @잉친쓰, 2023.03.07)
+   *
+   * 남기고 싶은 말
+   *   - https://cafe.daum.net/ingsfriend/prrY/4434
+   *   - https://cafe.daum.net/ingsfriend/prrY/4643
+   *   - 잉친이들아 니네 코드 쩔더라
+   *   - 우정잉 만세!
+   */
+
+
+  /***** 0. 공통 *****/
+    
+  :root {
+    --ingchin-background: url(https://t1.daumcdn.net/cafeattach/1YV3j/6ec6f3657c4f4bca8c2ce05653a078053bfd0c99); /* 카페 배너 */
+    --ingchin-daangn-profile: url(https://t1.daumcdn.net/cafeattach/1YV3j/5c5dcee36b68bc8a196ebfc74e1222d99a574de3); /* 카페 프로필 */
+    --ingchin-ssorim: url(https://t1.daumcdn.net/cafeattach/1YV3j/7bb0470c18d7bf20ded50b2f0889614cadcfec84); /* 프로필 사진 */
+    --ingchin-title-image: url(https://t1.daumcdn.net/cafeattach/1YV3j/b24495e83f87a3fd9781d647ee955c84f03ac859); /* 제목에 들어갈 사진 */
+  }
+  
+  
+  /***** 1. PC *****/
+  
+  /*** 1-1. PC 제목 수정 ***/
+  
+  #content .bbs_read_tit .tit_info {
+    content: var(--ingchin-title-image);
+    width: 60%;
+  }
+  
+  /*** 1-2. PC 작성자 정보란 조작 ***/
+
+  /* 작성자 프사 교체 */
+  #content .bbs_read_tit .profile_thumb img {
+    content: var(--ingchin-ssorim);
+  }
+  /* 작성자 닉네임 교체 */
+  #content .bbs_read_tit .cover_info a.link_item {
+    font-size: 0px;
+  }
+  #content .bbs_read_tit .cover_info a.link_item:after {
+    content: "쏘림쏘림";
+    font-size: 13px;
+  }
+  /* 게시글 정보 감추기 및 당근 판매자 장소 정보란으로 활용 */
+  #content .bbs_read_tit .cover_info :nth-child(2) {
+    font-size: 0px;
+  }
+  #content .bbs_read_tit .cover_info :nth-child(2):after {
+    content: "우정구 잉잉동";
+    font-size: 13px;
+  }
+  #content .bbs_read_tit .cover_info :nth-child(n+2) {
+    font-size: 0px;
+  }
+
+  /*** 1-3. PC 게시판 정보 ***/
+  
+  /* 잡담 -> 중고물품 */
+  #content .bbs_read_tit .txt_subhead {
+    font-size: 0px;
+  }
+  #content .bbs_read_tit .txt_subhead:after {
+    content: "중고물품";
+    font-size: 13px;
+  }
+
+  /*** 1-4. PC 재정렬 ***/
+  
+  /* 카페 배너 및 카페 프사 교체 */
+  #TITLEBACKGROUND {
+    background: var(--ingchin-background) no-repeat center;
+    background-size: cover;
+  }
+  /* PC 카페 좌측 메뉴 카페 프로필 교체 */
+  .cafeinfoBox #cafeProfileImage img {
+    content: var(--ingchin-daangn-profile);
+  }
+  /* PC 카페 좌측 메뉴 카페 이름 교체 */
+  .cafeinfoBox .cafename {
+    font-size: 0px;
+  }
+  .cafeinfoBox .cafename:after {
+    content: "우정나라 중고거래 플랫폼 우정마켓";
+    font-size: 16px;
+  }
+
+
+  /***** 2. 모바일 *****/
+
+  /*** 2-1. 모바일 제목 수정 ***/
+  
+  #mArticle h3.tit_subject {
+    background: var(--ingchin-title-image) no-repeat center;
+    background-size: contain;
+    max-height: 480px; /* 아니 ㅅㅂ 갑자기 왜이렇게 넓게 나와 테스트 땐 안이랬는데 */
+    font-size: 140pt !important; /* 이게 이미지 크기와 대충 관련 있는듯 */
+    color: rgba(0,0,0,0); /* 글씨 투명하게 만드는 역할인듯 */
+  }
+
+  /*** 2-2. 모바일 작성자 정보란 조작 ***/
+
+  /* 작성자 프사 교체 */
+  #mArticle > div:first-child > :last-child > :first-child {
+    content: var(--ingchin-ssorim);
+  }
+  /* 작성자 닉네임 교체 */
+  #mArticle > div:first-child > :last-child > :nth-child(2) > span {
+    display: none;
+  }
+  #mArticle > div:first-child > :last-child > :nth-child(2):after {
+    content: "쏘림쏘림 \a 우정구 잉잉동";
+    white-space: pre-wrap;
+    display: inline-block;
+    color: #909090;
+  }
+</style>
